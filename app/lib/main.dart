@@ -1,4 +1,4 @@
-import 'package:api_service/api_service.dart';
+import 'package:md_api_service/api_service.dart';
 
 import 'api_service.dart';
 import 'inputs/api_input.dart';

@@ -1,4 +1,4 @@
-import 'package:api_service/api_service.dart';
+import 'package:md_api_service/api_service.dart';
 
 import '../models/todo.dart';
 
@@ -27,8 +27,8 @@ final class PostTodoAPIInput extends APIInput {
 
   @override
   Params? get queryParameters => {
-    'a': 'ab',
-  };
+        'a': 'ab',
+      };
 }
 
 final class GetTodoListAPIInput extends APIInput {

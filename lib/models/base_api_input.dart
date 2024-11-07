@@ -1,6 +1,6 @@
-import 'package:api_service/helpers/http_headers.dart';
 import 'package:dio/dio.dart';
 
+import '../helpers/http_headers.dart';
 import '../helpers/http_method.dart';
 import 'type_alias.dart';
 
@@ -11,6 +11,7 @@ sealed class BaseAPIInput {
   });
 
   String get path;
+
   final HTTPMethod method;
   final Map<String, dynamic> headers = {'Content-Type': 'application/json'};
   final bool requireAccessToken;

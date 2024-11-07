@@ -1,4 +1,4 @@
-name: api_service
+name: md_api_service
 description: "Base API Service"
 version: 0.0.1
 homepage: https://github.com/datdt-97/api_service

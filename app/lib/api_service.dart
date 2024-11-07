@@ -1,4 +1,4 @@
-import 'package:api_service/api_service.dart';
+import 'package:md_api_service/api_service.dart';
 
 final class APIService extends BaseAPIService {
   APIService() : super.init();

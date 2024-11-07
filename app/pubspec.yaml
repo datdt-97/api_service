@@ -9,7 +9,7 @@ environment:
 # Add regular dependencies here.
 dependencies:
   # path: ^1.8.0
-  api_service:
+  md_api_service:
     path: ../
 
 dev_dependencies:
