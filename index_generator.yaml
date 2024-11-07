@@ -1,0 +1,3 @@
+index_generator:
+  indexes:
+    - path: lib
