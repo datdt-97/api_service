@@ -26,5 +26,6 @@ class Todo {
       };
 
   @override
-  String toString() => 'Todo(id: $id, userId: $userId, title: $title, completed: $completed)';
+  String toString() =>
+      'Todo(id: $id, userId: $userId, title: $title, completed: $completed)';
 }

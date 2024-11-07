@@ -3,8 +3,6 @@ import 'package:dio/dio.dart';
 import 'log_options.dart';
 import 'network_logger.dart';
 
-
-
 /// A simple dio log interceptor (mainly inspired by the built-in dio
 /// `LogInterceptor`), which has coloring features and json formatting
 /// so you can have a better readable output.

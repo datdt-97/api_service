@@ -1,6 +1,6 @@
 name: md_api_service
-description: "Base API Service"
-version: 0.0.1
+description: "A Base API Service to use single Dio for multiple host and make model mapping easier."
+version: 0.0.2
 homepage: https://github.com/datdt-97/api_service
 
 environment:
