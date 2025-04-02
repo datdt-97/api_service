@@ -1,6 +1,6 @@
 name: md_api_service
 description: "A Base API Service to use single Dio for multiple host and make model mapping easier."
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/datdt-97/api_service
 
 environment:
@@ -18,3 +18,4 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^4.0.0
+  index_generator: ^3.4.1

@@ -1,3 +1,4 @@
 index_generator:
   indexes:
     - path: lib
+      name: api_service

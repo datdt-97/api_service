@@ -7,6 +7,7 @@ import '../models/base_api_input.dart';
 extension RestRequestOptionExt on BaseAPIInput {
   RequestOptions toRequestOptions([
     NetworkRequestOptions? options,
+    CancelToken? cancelToken,
   ]) =>
       RequestOptions(
         baseUrl: baseUrl,
@@ -18,6 +19,7 @@ extension RestRequestOptionExt on BaseAPIInput {
         connectTimeout: connectTimeout,
         sendTimeout: sendTimeout,
         receiveTimeout: sendTimeout,
+        cancelToken: cancelToken,
         onReceiveProgress: options?.onReceiveProgress,
         validateStatus: (statusCode) => HTTPStatus(statusCode).isOk,
       );
@@ -26,6 +28,7 @@ extension RestRequestOptionExt on BaseAPIInput {
 extension UploadRequestOptionExt on BaseUploadAPIInput {
   Future<RequestOptions> toRequestOptions([
     NetworkRequestOptions? options,
+    CancelToken? cancelToken,
   ]) async =>
       RequestOptions(
         baseUrl: baseUrl,
@@ -37,6 +40,7 @@ extension UploadRequestOptionExt on BaseUploadAPIInput {
         connectTimeout: connectTimeout,
         sendTimeout: sendTimeout,
         receiveTimeout: sendTimeout,
+        cancelToken: cancelToken,
         onReceiveProgress: options?.onReceiveProgress,
         validateStatus: (statusCode) => HTTPStatus(statusCode).isOk,
         contentType: Headers.multipartFormDataContentType,

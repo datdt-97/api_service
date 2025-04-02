@@ -17,6 +17,7 @@ abstract base class BaseAPIService {
     Dio? dio,
     BaseOptions? options,
     List<Interceptor>? interceptors,
+    this.cancelToken,
     bool isLogEnabled = true,
   }) {
     this.dio = dio ?? Dio(options);
@@ -29,6 +30,7 @@ abstract base class BaseAPIService {
   BaseAPIService.init({
     Dio? dio,
     List<Interceptor>? interceptors,
+    CancelToken? cancelToken,
     bool isLogEnabled = true,
   }) : this(
           dio: dio,
@@ -38,20 +40,24 @@ abstract base class BaseAPIService {
             sendTimeout: const Duration(seconds: 30),
           ),
           interceptors: interceptors,
+          cancelToken: cancelToken,
           isLogEnabled: isLogEnabled,
         );
 
   BaseAPIService.mock(
     Dio dio, {
     List<Interceptor>? interceptors,
+    CancelToken? cancelToken,
     bool isLogEnabled = true,
   }) : this.init(
           dio: dio,
           interceptors: interceptors,
+          cancelToken: cancelToken,
           isLogEnabled: isLogEnabled,
         );
 
   late final Dio dio;
+  final CancelToken? cancelToken;
 
   Future<T> requestJSONObject<T>(
     BaseAPIInput input, {
@@ -97,7 +103,7 @@ abstract base class BaseAPIService {
     BaseAPIInput input, {
     NetworkRequestOptions options = const NetworkRequestOptions(),
   }) async {
-    final requestOptions = input.toRequestOptions(options);
+    final requestOptions = input.toRequestOptions(options, cancelToken);
     return dio.fetch(requestOptions);
   }
 
@@ -107,6 +113,7 @@ abstract base class BaseAPIService {
     return dio.post(
       input.baseUrl + input.path,
       data: formData,
+      cancelToken: cancelToken,
       options: Options(
         headers: input.headers,
       ),
